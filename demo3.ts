@@ -46,10 +46,15 @@ if (pinAnswer.pin === myPin) {
       name: "cashAmount",
       type: "list",
       message: "Select The Amount :",
-      choices: ["100", "1000", "2000", "5000"],
+      choices: ["100", "1000", "3000", "5000"],
     });
-    myBalance -= fastcash.cashAmount;
-    console.log(`Your Remaining Balance is ${myBalance}`);
+    if(myBalance >= fastcash.cashAmount){
+    myBalance -= fastcash.cashAmount
+     console.log(`Your Remaining Balance is ${myBalance}`);
+  }
+else{
+    console.log("Your Balance is insufficient");
+  }
   }
 } else {
   console.log("Your Pin is incorrect");
